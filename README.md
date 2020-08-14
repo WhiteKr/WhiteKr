@@ -9,6 +9,8 @@
 
 👯 I'm not so good at coding something, but I'm learning now and my study will go on.
 
+🔗 Discord: `White_Choco#9170`
+
 -----
 
 💬 I have to work hard on GitHub grass farming, but it's so hard.
