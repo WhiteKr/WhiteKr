@@ -1,7 +1,7 @@
 ![GitHub Stats Banner](https://github-readme-stats.vercel.app/api?username=WhiteKr&show_icons=true&title_color=FAEA88&icon_color=A9FF3F&text_color=CCC&bg_color=323232)
 
 # Welcome to My GitHub! 🌱
-😄 I am a high school sophomore in 2020 who is very interested in coding!
+😄 I am a senior in high school in 2021 who is very interested in making my own programs!
 
 ⚡ I'm studying ![Android](https://img.shields.io/badge/-Android-00c717?style=for-the-badge&logo=android&logoColor=fff) with ![Kotlin](https://img.shields.io/badge/-Kotlin-0095d5?style=for-the-badge&logo=kotlin&logoColor=fff) now.
 
