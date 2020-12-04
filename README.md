@@ -5,7 +5,7 @@
 
 ⚡ I'm studying ![Android](https://img.shields.io/badge/-Android-00c717?style=for-the-badge&logo=android&logoColor=fff) with ![Kotlin](https://img.shields.io/badge/-Kotlin-0095d5?style=for-the-badge&logo=kotlin&logoColor=fff) now.
 
-🤔 The languages I usually use are ![JavaScript](https://img.shields.io/badge/-Javascript-f5c800?style=for-the-badge&logo=javascript&logoColor=fff), ![Kotlin](https://img.shields.io/badge/-Kotlin-0095d5?style=for-the-badge&logo=kotlin&logoColor=fff), ![Java](https://img.shields.io/badge/-Java-fc7b03?style=for-the-badge&logo=java&logoColor=fff) and so on.
+🤔 The languages I usually use are ![TypeScript](https://img.shields.io/badge/-Typescript-f5c800?style=for-the-badge&logo=typescript&logoColor=fff), ![JavaScript](https://img.shields.io/badge/-Javascript-f5c800?style=for-the-badge&logo=javascript&logoColor=fff), ![Kotlin](https://img.shields.io/badge/-Kotlin-0095d5?style=for-the-badge&logo=kotlin&logoColor=fff), ![Java](https://img.shields.io/badge/-Java-fc7b03?style=for-the-badge&logo=java&logoColor=fff) and so on.
 
 👯 I'm not so good at coding something, but I'm learning now and my study will go on.
 
