@@ -9,7 +9,9 @@
 
 👯 I'm not so good at coding something, but I'm learning now and my study will go on.
 
-🔗 Discord: `White_Choco#9170`
+- 🔗 Contacts
+  - Discord Tag: `White_Choco#9170`
+  - KakaoTalk ID: `han2215`
 
 -----
 
