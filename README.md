@@ -3,7 +3,15 @@
 😄 I am a high school student who get loved in working my own projects :D
 
 ## GitHub Stats
-![GitHub Stats Banner](https://github-readme-stats.vercel.app/api?username=WhiteKr&show_icons=true&title_color=FAEA88&icon_color=A9FF3F&text_color=CCC&bg_color=323232)
+<a href="https://github.com/WhiteKr/WhiteKr">
+  <img align="center"
+       src="https://github-readme-stats.vercel.app/api/top-langs/?username=WhiteKr&hide=l&title_color=FAEA88&text_color=CCC&icon_color=A9FF3F&bg_color=323232" />
+</a>
+<a href="https://github.com/WhiteKr/WhiteKr">
+  <img align="center"
+       src="https://github-readme-stats.vercel.app/api?username=WhiteKr&show_icons=true&line_height=27&count_private=true&title_color=FAEA88&text_color=CCC&icon_color=A9FF3F&bg_color=323232"
+       alt="WhiteKr's GitHub Stats" />
+</a>
 
 ## ⚡ Now I'm studying ...
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white) with
@@ -20,7 +28,7 @@ Web with ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&
 ## 👯 I'm not so good at coding something, but I'm learning now and my study will go on.
 
 ## 🔗 Contacts
-  - Discord Tag: `White_Choco#9170`
+  - ![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white) Tag: `White_Choco#9170`
   - KakaoTalk ID: `han2215`
 
 📫 If you have a brilliant idea in your brain, contact me!
