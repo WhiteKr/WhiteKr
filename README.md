@@ -1,10 +1,9 @@
-# White Choco
+# Welcome to My GitHub! 🌱
+
+😄 I am a high school student who get loved in working my own projects :D
 
 ## GitHub Stats
 ![GitHub Stats Banner](https://github-readme-stats.vercel.app/api?username=WhiteKr&show_icons=true&title_color=FAEA88&icon_color=A9FF3F&text_color=CCC&bg_color=323232)
-
-## Welcome to My GitHub! 🌱
-😄 I am a senior in high school in 2021 who is very interested in making my own programs!
 
 ## ⚡ Now I'm studying ...
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white) with
