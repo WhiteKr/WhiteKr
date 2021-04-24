@@ -1,4 +1,4 @@
-# Welcome to My GitHub! 🌱
+# 어서오세요! Welcome to My GitHub! 🌱
 
 😄 I am a high school student who get loved in working my own projects :D
 
@@ -27,7 +27,10 @@ Web with ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB),
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white) and so on.
 
-## 👯 I'm not so good at coding something, but I'm learning now and my study will go on.
+## 👯 Web Pages
+I have web pages working by [Google Cloud Platform](https://cloud.google.com) and [NGINX](https://www.nginx.com).
+- [https://whitekr.xyz](https://whitekr.xyz)
+- [Clone Coding Instagram](https://instagram.whitekr.xyz)
 
 ## 🔗 Contacts
   - ![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white) Tag: `White_Choco#9170`
