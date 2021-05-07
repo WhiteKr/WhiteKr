@@ -36,4 +36,4 @@ I have web pages working by [Google Cloud Platform](https://cloud.google.com) an
   - ![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white) Tag: `White_Choco#9170`
   - KakaoTalk ID: `han2215`
 
-📫 If you have a brilliant idea in your brain, contact me!
+📫 If you have some brilliant ideas, contact me!
