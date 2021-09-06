@@ -15,6 +15,8 @@
 
 ![GitHub Views](https://komarev.com/ghpvc/?username=WhiteKr&color=FAC151)
 
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=whitekr)](https://solved.ac/whitekr/)
+
 ## ⚡ Now I'm studying ...
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white) with
 ![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white)\
