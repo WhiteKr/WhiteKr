@@ -3,6 +3,7 @@
 😄 I am a high school student who get loved in working my own projects :D
 
 ## Stats
+[![Awesome Kotlin Badge](https://kotlin.link/awesome-kotlin.svg)](https://github.com/KotlinBy/awesome-kotlin)
 ![GitHub Views](https://komarev.com/ghpvc/?username=WhiteKr&color=FAC151)
 
 <a href="https://github.com/WhiteKr/WhiteKr">
