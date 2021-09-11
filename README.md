@@ -11,7 +11,6 @@
   <a href="https://github.com/WhiteKr/WhiteKr">
     <img align="center" src="https://github-readme-stats.vercel.app/api?username=WhiteKr&show_icons=true&line_height=27&count_private=true&title_color=FAEA88&text_color=CCC&icon_color=A9FF3F&bg_color=323232" alt="WhiteKr's GitHub Stats" />
   </a>
-  <!-- [![Solved.ac mini](http://mazassumnida.wtf/api/mini/generate_badge?boj=WhiteKr)](https://solved.ac/WhiteKr) -->
   
   ## Main
   ![Kotlin](https://img.shields.io/badge/kotlin-%230095D5.svg?style=for-the-badge&logo=kotlin&logoColor=white)
