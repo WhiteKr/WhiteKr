@@ -7,7 +7,7 @@
   ## Stats
   [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=WhiteKr&layout=compact)](https://github.com/WhiteKr)
   [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=WhiteKr)](https://solved.ac/WhiteKr)\
-  [![WakaTime Stats](https://github-readme-stats.vercel.app/api/wakatime?username=WhiteKr&layout=compact)](https://github.com/WhiteKr)\
+  [![WakaTime Stats](https://github-readme-stats.vercel.app/api/wakatime?username=WhiteKr&layout=compact)](https://wakatime.com/@WhiteKr)\
   <a href="https://github.com/WhiteKr/WhiteKr">
     <img align="center" src="https://github-readme-stats.vercel.app/api?username=WhiteKr&show_icons=true&line_height=27&count_private=true&title_color=FAEA88&text_color=CCC&icon_color=A9FF3F&bg_color=323232" alt="WhiteKr's GitHub Stats" />
   </a>
