@@ -2,7 +2,7 @@
   
   [![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=300&section=header&text=Welcome&fontSize=90&animation=fadeIn&fontAlignY=38&desc=to%20WhiteKr's%20GitHub!&descAlignY=51&descAlign=62)](https://github.com/WhiteKr)
   
-  <h3 align="center">A student who loves to code&program :D</h3>
+  <h3 align="center">I am who loves to code&program :D</h3>
   
   ## Stats
   [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=WhiteKr&layout=compact)](https://github.com/WhiteKr)
