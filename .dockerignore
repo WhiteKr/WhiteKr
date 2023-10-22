@@ -3,8 +3,5 @@
 node_modules
 .env
 .gitignore
-Dockerfile
-.dockerignore
 README.md
-.next
 .git

@@ -17,6 +17,17 @@ jobs:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
 
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 20
+
+      - name: Install dependencies using pnpm
+        run: npm i -g pnpm && pnpm i
+
+      - name: Build Next.js app
+        run: pnpm build
+
       # docker buildx 설치
       - name: Set up docker buildx
         id: buildx
