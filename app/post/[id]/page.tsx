@@ -8,7 +8,7 @@ interface PostProps {
   };
 }
 
-const Post = async (props: PostProps) => {
+const PostPage = async (props: PostProps) => {
   const db: Db = (await connectDB).db('choco-forum');
   const filter: Filter<PostType> = { _id: new ObjectId(props.params.id) };
   const post: PostType | null = await db.collection<PostType>('post').findOne(filter);
@@ -22,4 +22,4 @@ const Post = async (props: PostProps) => {
   );
 };
 
-export default Post;
+export default PostPage;

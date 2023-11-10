@@ -3,7 +3,7 @@ import { connectDB } from '@/util/database';
 import { PostType } from '@/types/postType';
 import Link from 'next/link';
 
-const Post = async () => {
+const PostsPage = async () => {
   let db: Db = (await connectDB).db('choco-forum');
   let postArray: PostType[] = await db.collection<PostType>('post').find().toArray();
 
@@ -24,4 +24,4 @@ const Post = async () => {
   );
 };
 
-export default Post;
+export default PostsPage;
