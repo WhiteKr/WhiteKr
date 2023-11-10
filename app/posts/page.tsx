@@ -1,6 +1,7 @@
 import { Db } from 'mongodb';
 import { connectDB } from '@/util/database';
 import { PostType } from '@/types/postType';
+import Link from 'next/link';
 
 const Post = async () => {
   let db: Db = (await connectDB).db('choco-forum');
@@ -10,7 +11,12 @@ const Post = async () => {
     <div className='list-bg'>
       {postArray.map((value: PostType, index: number) =>
         <div className='list-item' key={index}>
-          <h4>{value.title}</h4>
+          <Link
+            prefetch={false}
+            href={`/post/${value._id}`}
+          >
+            <h4>{value.title}</h4>
+          </Link>
           <p>{value.content}</p>
         </div>,
       )}
