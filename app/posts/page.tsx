@@ -17,7 +17,12 @@ const PostsPage = async () => {
           >
             <h4>{value.title}</h4>
           </Link>
-          <p>{value.content}</p>
+          <Link href={`/post/edit/${value._id}`}>
+            수정
+          </Link>
+          <p>
+            {value.content}
+          </p>
         </div>,
       )}
     </div>
