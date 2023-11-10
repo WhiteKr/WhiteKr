@@ -1,4 +1,5 @@
 import React from 'react';
+import './global.css';
 
 export const metadata = {
   title: 'Next.js',
@@ -8,7 +9,7 @@ export const metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
 }) {
   return (
     <html lang='en'>
