@@ -1,5 +1,6 @@
 import React from 'react';
 import './global.css';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'Next.js',
@@ -13,7 +14,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-    <body>{children}</body>
+    <body>
+    <div className='navbar'>
+      <Link href='/' className='logo'>Chocommunity</Link>
+      <Link href='/posts'>Posts</Link>
+    </div>
+    {children}
+    </body>
     </html>
   );
 }
