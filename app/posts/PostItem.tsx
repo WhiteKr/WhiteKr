@@ -6,10 +6,14 @@ import React from 'react';
 
 interface PostItemProps {
   value: PostType;
+  isMine: boolean;
 }
 
 export const PostItem = (props: PostItemProps) => {
-  const { value }: PostItemProps = props;
+  const {
+    value,
+    isMine = false,
+  }: PostItemProps = props;
 
   const onClickDelete = async (event: React.MouseEvent<HTMLSpanElement>) => {
     try {
@@ -39,8 +43,8 @@ export const PostItem = (props: PostItemProps) => {
       <h4>{value.title}</h4>
     </Link>
 
-    <Link href={`/post/edit/${value._id}`}>✏️</Link>
-    {true && <span onClick={onClickDelete}>🗑️</span>}
+    {isMine && <Link href={`/post/edit/${value._id}`}>✏️</Link>}
+    {isMine && <span onClick={onClickDelete}>🗑️</span>}
 
     <p>{value.content}</p>
   </div>;
