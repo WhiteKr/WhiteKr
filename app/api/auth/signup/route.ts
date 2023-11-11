@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import { connectDB } from '@/util/database';
 import { Db, InsertOneResult } from 'mongodb';
 
