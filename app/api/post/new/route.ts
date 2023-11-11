@@ -5,38 +5,37 @@ import { Db, InsertOneResult } from 'mongodb';
 import { connectDB } from '@/util/database';
 
 export const POST = async (request: NextRequest) => {
-  const session: Session | null = await getServerSession(authOptions);
-  if (session == null) {
-    return new NextResponse(
-      JSON.stringify({ msg: 'Please login first.' }),
-      { status: 401 },
-    );
-  }
-
-  const formData: FormData = await request.formData();
-
-  const title: string = formData.get('title') as string;
-  const content: string = formData.get('content') as string;
-
-  if (title == '') {
-    return new NextResponse(
-      JSON.stringify({ msg: 'No title provided.' }),
-      { status: 400 },
-    );
-  }
-  if (content == '') {
-    return new NextResponse(
-      JSON.stringify({ msg: 'No content provided.' }),
-      { status: 400 },
-    );
-  }
-
   try {
+    const session: Session | null = await getServerSession(authOptions);
+    if (session == null) {
+      return new NextResponse(
+        JSON.stringify({ msg: 'Please login first.' }),
+        { status: 401 },
+      );
+    }
+
+    const formData: FormData = await request.formData();
+
+    const title: string = formData.get('title') as string;
+    const content: string = formData.get('content') as string;
+    if (title == '') {
+      return new NextResponse(
+        JSON.stringify({ msg: 'No title provided.' }),
+        { status: 400 },
+      );
+    }
+    if (content == '') {
+      return new NextResponse(
+        JSON.stringify({ msg: 'No content provided.' }),
+        { status: 400 },
+      );
+    }
+
     const db: Db = (await connectDB).db('choco-forum');
     const result: InsertOneResult<Document> = await db
       .collection('post')
       .insertOne({
-        email: session?.user?.email,
+        email: session!.user?.email,
         title: title,
         content: content,
       });

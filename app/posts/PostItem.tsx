@@ -15,10 +15,14 @@ export const PostItem = (props: PostItemProps) => {
     try {
       const item: HTMLSpanElement = (event.target as HTMLSpanElement).parentElement!;
 
-      await fetch(
+      const result: Response = await fetch(
         `/api/post/delete/${value._id.toString()}`,
         { method: 'DELETE' },
       );
+      if (!result.ok) {
+        console.log(result);
+        return;
+      }
 
       item.style.opacity = '0';
       setTimeout(() => {
@@ -39,7 +43,7 @@ export const PostItem = (props: PostItemProps) => {
     </Link>
 
     <Link href={`/post/edit/${value._id}`}>✏️</Link>
-    <span onClick={onClickDelete}>🗑️</span>
+    {true && <span onClick={onClickDelete}>🗑️</span>}
 
     <p>{value.content}</p>
   </div>;
