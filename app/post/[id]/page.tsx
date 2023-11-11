@@ -1,6 +1,6 @@
 import { Db, Filter, ObjectId } from 'mongodb';
 import { connectDB } from '@/util/database';
-import { PostType } from '@/types/postType';
+import { PostType } from '@/types/PostType';
 
 interface PostProps {
   params: {

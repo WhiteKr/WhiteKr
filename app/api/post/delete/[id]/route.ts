@@ -3,7 +3,7 @@ import { Db, DeleteResult, ObjectId } from 'mongodb';
 import { connectDB } from '@/util/database';
 import { getServerSession, Session } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
-import { PostType } from '@/types/postType';
+import { PostType } from '@/types/PostType';
 
 interface PostDeleteParams {
   params: {
@@ -35,7 +35,6 @@ export const DELETE = async (
       .collection('post')
       .findOne<PostType>({ _id: new ObjectId(params.id) });
     if (post == null) {
-      console.log(post);
       return new NextResponse(
         JSON.stringify({ result: 'post is not found.' }),
         { status: 404 },

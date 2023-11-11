@@ -1,6 +1,6 @@
 import { Db } from 'mongodb';
 import { connectDB } from '@/util/database';
-import { PostType } from '@/types/postType';
+import { PostType } from '@/types/PostType';
 import { PostItem } from '@/app/posts/PostItem';
 
 export const dynamic = 'force-dynamic';

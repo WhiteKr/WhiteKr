@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { PostType } from '@/types/postType';
+import { PostType } from '@/types/PostType';
 import React from 'react';
 
 interface PostItemProps {
@@ -19,10 +19,7 @@ export const PostItem = (props: PostItemProps) => {
         `/api/post/delete/${value._id.toString()}`,
         { method: 'DELETE' },
       );
-      if (!result.ok) {
-        console.log(result);
-        return;
-      }
+      if (!result.ok) return;
 
       item.style.opacity = '0';
       setTimeout(() => {
