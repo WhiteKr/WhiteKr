@@ -4,6 +4,10 @@ on:
 
 env:
   DOCKER_IMAGE: ghcr.io/whitekr/whitekr
+  GH_CLIENT_ID: ${{ secrets.GH_CLIENT_ID }}
+  GH_CLIENT_SECRET: ${{ secrets.GH_CLIENT_SECRET }}
+  DB_URL: ${{ secrets.DB_URL }}
+  JWT_SECRET: ${{ secrets.JWT_SECRET }}
 
 jobs:
   build-and-push:
