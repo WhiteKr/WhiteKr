@@ -41,7 +41,7 @@ export const POST = async (request: NextRequest) => {
       });
 
     return NextResponse.redirect(
-      new URL(`/post/${result.insertedId.toString()}`, request.url),
+      new URL(`/post/${result.insertedId.toString()}`, process.env.NEXTAUTH_URL),
       { status: 301 },
     );
   } catch (error) {

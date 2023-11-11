@@ -40,7 +40,7 @@ export const POST = async (request: NextRequest) => {
       );
 
     return NextResponse.redirect(
-      new URL(`/post/${_id}`, request.url),
+      new URL(`/post/${_id}`, process.env.NEXTAUTH_URL),
       { status: 301 },
     );
   } catch (error) {
