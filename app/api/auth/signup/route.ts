@@ -77,7 +77,7 @@ export const POST = async (request: NextRequest) => {
     }
 
     return NextResponse.redirect(
-      new URL('/', request.url),
+      new URL('/', process.env.NEXTAUTH_URL),
       { status: 301 },
     );
   } catch (error) {
