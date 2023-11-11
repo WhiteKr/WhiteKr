@@ -1,8 +1,18 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { getServerSession, Session } from 'next-auth';
+import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { Db, InsertOneResult } from 'mongodb';
 import { connectDB } from '@/util/database';
 
 export const POST = async (request: NextRequest) => {
+  const session: Session | null = await getServerSession(authOptions);
+  if (session == null) {
+    return new NextResponse(
+      JSON.stringify({ msg: 'Please login first.' }),
+      { status: 401 },
+    );
+  }
+
   const formData: FormData = await request.formData();
 
   const title: string = formData.get('title') as string;
@@ -25,7 +35,11 @@ export const POST = async (request: NextRequest) => {
     const db: Db = (await connectDB).db('choco-forum');
     const result: InsertOneResult<Document> = await db
       .collection('post')
-      .insertOne({ title: title, content: content });
+      .insertOne({
+        email: session?.user?.email,
+        title: title,
+        content: content,
+      });
 
     return NextResponse.redirect(
       new URL(`/post/${result.insertedId.toString()}`, request.url),
