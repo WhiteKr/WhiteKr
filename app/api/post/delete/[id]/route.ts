@@ -1,7 +1,6 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { Db, ObjectId } from 'mongodb';
 import { connectDB } from '@/util/database';
-import { NextApiRequest } from 'next';
 
 interface PostDeleteParams {
   params: {
@@ -10,13 +9,16 @@ interface PostDeleteParams {
 }
 
 export const DELETE = async (
-  _request: NextApiRequest,
+  _request: NextRequest,
   { params }: PostDeleteParams,
 ) => {
   const postId: string = params.id;
 
   if (postId == null) {
-    return new NextResponse(JSON.stringify({ result: 'postId is null' }), { status: 400 });
+    return new NextResponse(
+      JSON.stringify({ result: 'postId is null' }),
+      { status: 400 },
+    );
   }
 
   try {
