@@ -1,9 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+import { PostType } from '@/types/postType';
 
 interface PostItemProps {
-  value: any;
+  value: PostType;
 }
 
 export const PostItem = (props: PostItemProps) => {
@@ -18,6 +19,18 @@ export const PostItem = (props: PostItemProps) => {
         <h4>{value.title}</h4>
       </Link>
       <Link href={`/post/edit/${value._id}`}>✏️</Link>
+      <span onClick={() => {
+        fetch(
+          `/api/post/delete?postId=${value._id}`,
+          { method: 'DELETE' },
+        ).then((response: Response) => {
+          if (response.status == 200) {
+            location.reload();
+          }
+        }).catch((error) => {
+          console.log(error);
+        });
+      }}>🗑️</span>
       <p>
         {value.content}
       </p>
