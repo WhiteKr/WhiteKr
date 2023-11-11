@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { PostType } from '@/types/postType';
+import React from 'react';
 
 interface PostItemProps {
   value: PostType;
@@ -10,30 +11,36 @@ interface PostItemProps {
 export const PostItem = (props: PostItemProps) => {
   const { value }: PostItemProps = props;
 
-  return (
-    <div className='list-item'>
-      <Link
-        prefetch={false}
-        href={`/post/${value._id}`}
-      >
-        <h4>{value.title}</h4>
-      </Link>
-      <Link href={`/post/edit/${value._id}`}>✏️</Link>
-      <span onClick={() => {
-        fetch(
-          `/api/post/delete?postId=${value._id}`,
-          { method: 'DELETE' },
-        ).then((response: Response) => {
-          if (response.status == 200) {
-            location.reload();
-          }
-        }).catch((error) => {
-          console.log(error);
-        });
-      }}>🗑️</span>
-      <p>
-        {value.content}
-      </p>
-    </div>
-  );
+  const onClickDelete = async (event: React.MouseEvent<HTMLSpanElement>) => {
+    try {
+      const item: HTMLSpanElement = (event.target as HTMLSpanElement).parentElement!;
+
+      await fetch(
+        `/api/post/delete/${value._id.toString()}`,
+        { method: 'DELETE' },
+      );
+
+      item.style.opacity = '0';
+      setTimeout(() => {
+        item.style.display = 'none';
+      }, 1000);
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return <div className='list-item'>
+    <Link
+      prefetch={false}
+      href={`/post/${value._id}`}
+    >
+      <h4>{value.title}</h4>
+    </Link>
+
+    <Link href={`/post/edit/${value._id}`}>✏️</Link>
+    <span onClick={onClickDelete}>🗑️</span>
+
+    <p>{value.content}</p>
+  </div>;
 };

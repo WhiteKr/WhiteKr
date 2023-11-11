@@ -24,6 +24,8 @@
   padding: 20px;
   margin-bottom: 5px;
   box-shadow: rgb(224, 224, 224) 0 2px 4px 0;
+  opacity: 1;
+  transition: all 1s;
 }
 
 .list-item h4 {
