@@ -12,13 +12,13 @@ const PostWritePage = async () => {
   return (
     <div className={'page-container'}>
       <form
-        action='/api/post/new'
-        method='POST'
         className={styles.postForm}
+        action='/api/post'
+        method='POST'
       >
         <input name='title' placeholder='제목' />
         <textarea name='content' placeholder='내용' rows={10} />
-        <button type='submit'>버튼</button>
+        <button type='submit'>게시</button>
       </form>
     </div>
   );

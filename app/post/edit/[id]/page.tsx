@@ -3,6 +3,7 @@ import { connectDB } from '@/util/database';
 import { PostType } from '@/types/PostType';
 
 import styles from '../../post.module.css';
+import React from 'react';
 
 interface PostEditProps {
   params: {
@@ -18,9 +19,9 @@ const PostEditPage = async (props: PostEditProps) => {
   return (
     <div className={`page-container`}>
       <form
-        action={`/api/post/edit`}
-        method='POST'
         className={styles.postForm}
+        action='/api/post/edit'
+        method='POST'
       >
         <input name='title' placeholder='제목' defaultValue={post?.title} />
         <textarea name='content' placeholder='내용' defaultValue={post?.content} rows={10} />

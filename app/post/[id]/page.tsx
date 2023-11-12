@@ -6,6 +6,7 @@ import ProfileAvatar from '@/components/ProfileAvatar';
 import CommentSection from '@/app/post/[id]/CommentSection';
 
 import styles from '../post.module.css';
+import { timeAgo } from '@/util/date';
 
 interface PostProps {
   params: {
@@ -33,6 +34,12 @@ const PostPage = async (props: PostProps) => {
       </div>
       <div className={styles.postContent}>
         <p>{post?.content}</p>
+      </div>
+      <div className={`${styles.timestamps} ${styles.infoContainer}`}>
+        <p>{timeAgo(post?.timestamp!)} 작성</p>
+        {post?.updatedAt &&
+          <p>{timeAgo(post?.updatedAt)} 수정</p>
+        }
       </div>
       <CommentSection parentId={post!._id.toString()} />
     </div>

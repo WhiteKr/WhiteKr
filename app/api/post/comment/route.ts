@@ -3,6 +3,51 @@ import { connectDB } from '@/util/database';
 import { getServerSession, Session } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { CommentType } from '@/types/PostCommentType';
+import { NextRequest } from 'next/server';
+
+export const GET = async (request: NextRequest) => {
+  try {
+    const searchParams: URLSearchParams = request.nextUrl.searchParams;
+    const idString: string | null = searchParams.get('id');
+    if (!idString) {
+      return new Response(
+        JSON.stringify({
+          message: 'id is required',
+        }), { status: 400 },
+      );
+    }
+
+    const id: ObjectId = new ObjectId(idString);
+
+    const db: Db = (await connectDB).db('choco-forum');
+    const commentList: CommentType[] | null = await db
+      .collection<CommentType>('comment')
+      .find({ parentId: id })
+      .toArray();
+
+    if (!commentList) {
+      return new Response(
+        JSON.stringify({
+          message: 'error on read comment list',
+        }), { status: 500 },
+      );
+    }
+
+    return new Response(
+      JSON.stringify(commentList),
+      { status: 200 },
+    );
+  } catch (error) {
+    console.log(error);
+    return new Response(
+      JSON.stringify({
+        message: 'error on read comment list',
+      }), {
+        status: 500,
+      },
+    );
+  }
+};
 
 export const POST = async (request: Request) => {
   try {
@@ -23,6 +68,7 @@ export const POST = async (request: Request) => {
         content: comment.content,
         parentId: new ObjectId(comment.parentId),
         email: session?.user!.email,
+        timestamp: new Date(),
       } as CommentType);
     if (!result.insertedId) {
       return new Response(
@@ -52,16 +98,26 @@ export const POST = async (request: Request) => {
   }
 };
 
-export const DELETE = async () => {
+export const DELETE = async (request: NextRequest) => {
   try {
+    const searchParams: URLSearchParams = request.nextUrl.searchParams;
+    const id: string | null = searchParams.get('id');
+    if (!id) {
+      return new Response(
+        JSON.stringify({
+          message: 'id is required',
+        }), { status: 400 },
+      );
+    }
+
     const db: Db = (await connectDB).db('choco-forum');
     const result: DeleteResult = await db
-      .collection('comment')
-      .deleteOne({});
+      .collection<CommentType>('comment')
+      .deleteOne({ _id: new ObjectId(id) });
     if (!result.deletedCount) {
       return new Response(
         JSON.stringify({
-          message: 'failed to delete comment',
+          message: 'failed to edit comment',
         }), { status: 500 },
       );
     }
@@ -74,7 +130,7 @@ export const DELETE = async () => {
   } catch (error) {
     return new Response(
       JSON.stringify({
-        message: 'error on delete comment',
+        message: 'error on edit comment',
       }), { status: 500 },
     );
   }

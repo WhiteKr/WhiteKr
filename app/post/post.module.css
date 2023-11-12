@@ -22,15 +22,20 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .infoContainer p {
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: normal;
 }
 
 .postContent {
+}
+
+.timestamps {
+  justify-self: flex-end;
+  align-self: flex-end;
 }
 
 /* post form */
