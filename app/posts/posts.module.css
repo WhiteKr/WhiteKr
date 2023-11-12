@@ -12,6 +12,12 @@
   transition: all 1s;
 }
 
+.container:hover {
+  cursor: pointer;
+  background: var(--layout-background-color);
+  transition: background-color 0.2s;
+}
+
 .container * {
   color: var(--text-color);
   text-decoration: none;
@@ -22,13 +28,6 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 20px;
-}
-
-
-.post:hover {
-  cursor: pointer;
-  background: var(--layout-background-color);
-  transition: background-color 0.2s;
 }
 
 .post h4 {
