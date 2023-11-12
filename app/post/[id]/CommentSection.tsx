@@ -17,7 +17,7 @@ const CommentSection = (props: CommentSectionProps) => {
 
   useEffect(() => {
     fetch(
-      `/api/post/comment/list?id=${parentId}`,
+      `/api/post/comment?id=${parentId}`,
       { method: 'GET' },
     ).then((response: Response) => {
       return response.json();
