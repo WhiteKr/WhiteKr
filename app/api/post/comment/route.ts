@@ -3,6 +3,7 @@ import { connectDB } from '@/util/database';
 import { getServerSession, Session } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { CommentType } from '@/types/PostCommentType';
+import { NextRequest } from 'next/server';
 
 export const POST = async (request: Request) => {
   try {
@@ -52,12 +53,22 @@ export const POST = async (request: Request) => {
   }
 };
 
-export const DELETE = async () => {
+export const DELETE = async (request: NextRequest) => {
   try {
+    const searchParams: URLSearchParams = request.nextUrl.searchParams;
+    const id: string | null = searchParams.get('id');
+    if (!id) {
+      return new Response(
+        JSON.stringify({
+          message: 'id is required',
+        }), { status: 400 },
+      );
+    }
+
     const db: Db = (await connectDB).db('choco-forum');
     const result: DeleteResult = await db
-      .collection('comment')
-      .deleteOne({});
+      .collection<CommentType>('comment')
+      .deleteOne({ _id: new ObjectId(id) });
     if (!result.deletedCount) {
       return new Response(
         JSON.stringify({

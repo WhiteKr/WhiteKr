@@ -38,7 +38,7 @@ export const PostItem = (props: PostItemProps) => {
         .parentElement!;
 
       const result: Response = await fetch(
-        `/api/post/delete/${post._id.toString()}`,
+        `/api/post/delete?id=${post._id.toString()}`,
         { method: 'DELETE' },
       );
       if (!result.ok) return;

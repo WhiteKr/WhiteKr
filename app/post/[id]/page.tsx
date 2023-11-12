@@ -28,13 +28,18 @@ const PostPage = async (props: PostProps) => {
       <div className={styles.postHeader}>
         <p>{post?.title}</p>
         <div className={styles.infoContainer}>
-          <p>{timeAgo(post?.timestamp!)}</p>
           <p>{author?.name}</p>
           <ProfileAvatar src={author?.image} size={40} />
         </div>
       </div>
       <div className={styles.postContent}>
         <p>{post?.content}</p>
+      </div>
+      <div className={`${styles.timestamps} ${styles.infoContainer}`}>
+        <p>{timeAgo(post?.timestamp!)} 작성</p>
+        {post?.updatedAt &&
+          <p>{timeAgo(post?.updatedAt)} 수정</p>
+        }
       </div>
       <CommentSection parentId={post!._id.toString()} />
     </div>

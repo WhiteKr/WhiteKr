@@ -6,6 +6,7 @@ interface PostType {
   title: string;
   content: string;
   timestamp: Date;
+  updatedAt: Date;
 }
 
 export type { PostType };

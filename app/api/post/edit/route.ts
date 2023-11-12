@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Db, ObjectId } from 'mongodb';
 import { connectDB } from '@/util/database';
+import { PostType } from '@/types/PostType';
 
 export const POST = async (request: NextRequest) => {
   const formData: FormData = await request.formData();
@@ -30,12 +31,13 @@ export const POST = async (request: NextRequest) => {
 
   try {
     const db: Db = (await connectDB).db('choco-forum');
-    await db.collection('post')
+    await db.collection<PostType>('post')
       .updateOne({ _id: _id }, {
           $set: {
             title: title,
             content: content,
-          },
+            updatedAt: new Date(),
+          } as PostType,
         },
       );
 
