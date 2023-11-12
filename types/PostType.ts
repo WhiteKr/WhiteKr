@@ -5,6 +5,7 @@ interface PostType {
   email: string;
   title: string;
   content: string;
+  timestamp: Date;
 }
 
 export type { PostType };

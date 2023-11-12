@@ -3,6 +3,7 @@ import { getServerSession, Session } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { Db, InsertOneResult } from 'mongodb';
 import { connectDB } from '@/util/database';
+import { PostType } from '@/types/PostType';
 
 export const POST = async (request: NextRequest) => {
   try {
@@ -32,13 +33,14 @@ export const POST = async (request: NextRequest) => {
     }
 
     const db: Db = (await connectDB).db('choco-forum');
-    const result: InsertOneResult<Document> = await db
-      .collection('post')
+    const result: InsertOneResult = await db
+      .collection<PostType>('post')
       .insertOne({
         email: session!.user?.email,
         title: title,
         content: content,
-      });
+        timestamp: new Date(),
+      } as PostType);
 
     return NextResponse.redirect(
       new URL(`/post/${result.insertedId.toString()}`, process.env.NEXTAUTH_URL),

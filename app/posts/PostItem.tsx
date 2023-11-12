@@ -6,6 +6,7 @@ import React from 'react';
 import styles from './posts.module.css';
 import ProfileAvatar from '@/components/ProfileAvatar';
 import { UserType } from '@/types/UserType';
+import { timeForToday } from '@/util/date';
 
 interface PostItemProps {
   post: PostType;
@@ -67,7 +68,7 @@ export const PostItem = (props: PostItemProps) => {
           <div className={styles.infoContainer}>
             <ProfileAvatar src={author.image} size={20} />
             <p>{author.name}</p>
-            <p>코멘트 0개</p>
+            <p>{timeForToday(post.timestamp)}</p>
           </div>
         </div>
         <div className={styles.actions}>
