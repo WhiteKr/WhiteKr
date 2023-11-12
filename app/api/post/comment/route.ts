@@ -24,6 +24,7 @@ export const POST = async (request: Request) => {
         content: comment.content,
         parentId: new ObjectId(comment.parentId),
         email: session?.user!.email,
+        timestamp: new Date(),
       } as CommentType);
     if (!result.insertedId) {
       return new Response(

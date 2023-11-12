@@ -5,6 +5,7 @@ interface CommentType {
   content: string;
   parentId: string | ObjectId;
   email: string;
+  timestamp: Date;
 }
 
 export type { CommentType };

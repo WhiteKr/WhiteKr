@@ -15,12 +15,23 @@
   background: var(--layout-background-color)
 }
 
-.commentBox {
+.content {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 5px;
   align-content: center;
+}
+
+.authorContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.authorContainer p {
+  font-size: 0.8rem;
 }
 
 .actions {
