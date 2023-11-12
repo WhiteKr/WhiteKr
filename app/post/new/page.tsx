@@ -14,7 +14,7 @@ const PostWritePage = async () => {
       <form
         action='/api/post/new'
         method='POST'
-        className={styles.form}
+        className={styles.postForm}
       >
         <input name='title' placeholder='제목' />
         <textarea name='content' placeholder='내용' rows={10} />

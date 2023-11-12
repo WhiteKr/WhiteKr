@@ -4,19 +4,19 @@
   gap: 10px;
 }
 
-.container {
+.postContainer {
   display: block;
   background: var(--on-background-color);
   border-radius: 10px;
 }
 
-.container:hover {
+.postContainer:hover {
   cursor: pointer;
   background: var(--layout-background-color);
   transition: background-color 0.3s;
 }
 
-.container * {
+.postContainer * {
   color: var(--text-color);
   text-decoration: none;
 }
@@ -34,7 +34,7 @@
   font-weight: bold;
 }
 
-.content {
+.postContent {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -52,7 +52,7 @@
   color: var(--link-hover-color);
 }
 
-.info {
+.infoContainer {
   font-size: 0.8rem;
   display: flex;
   flex-direction: row;

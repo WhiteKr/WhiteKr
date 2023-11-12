@@ -20,7 +20,7 @@ const PostEditPage = async (props: PostEditProps) => {
       <form
         action={`/api/post/edit`}
         method='POST'
-        className={styles.form}
+        className={styles.postForm}
       >
         <input name='title' placeholder='제목' defaultValue={post?.title} />
         <textarea name='content' placeholder='내용' defaultValue={post?.content} rows={10} />
