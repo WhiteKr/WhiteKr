@@ -4,15 +4,19 @@ import Link from 'next/link';
 import { PostType } from '@/types/PostType';
 import React from 'react';
 import styles from './posts.module.css';
+import ProfileAvatar from '@/components/ProfileAvatar';
+import { UserType } from '@/types/UserType';
 
 interface PostItemProps {
   post: PostType;
+  author: UserType;
   isMine: boolean;
 }
 
 export const PostItem = (props: PostItemProps) => {
   const {
     post,
+    author,
     isMine = false,
   }: PostItemProps = props;
 
@@ -60,7 +64,8 @@ export const PostItem = (props: PostItemProps) => {
       <div className={styles.content}>
         <h4>{post.title}</h4>
         <div className={styles.info}>
-          <p>{post.email}</p>
+          <ProfileAvatar src={author.image} size={20} />
+          <p>{author.name}</p>
         </div>
       </div>
 
