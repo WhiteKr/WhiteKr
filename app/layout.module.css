@@ -1,5 +1,8 @@
-.navbar {
+.background {
   background: var(--layout-background-color);
+}
+
+.navbar {
   padding: 20px;
   display: flex;
   flex-direction: row;
@@ -11,7 +14,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 3rem;
+  gap: 1rem;
 }
 
 .tabs a {

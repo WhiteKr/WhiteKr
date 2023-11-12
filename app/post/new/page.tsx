@@ -6,7 +6,7 @@ const PostWritePage = async () => {
   const session: Session | null = await getServerSession(authOptions);
 
   if (!session) {
-    return <div>로그인이 필요합니다.</div>;
+    return <div className={'page-container'}>로그인이 필요합니다.</div>;
   }
 
   return (
