@@ -26,7 +26,7 @@ const PostPage = async (props: PostProps) => {
         <p>{post?.title}</p>
         <div className={styles.info}>
           <p>{author?.name}</p>
-          <ProfileAvatar src={author?.image} size={50} />
+          <ProfileAvatar src={author?.image} size={40} />
         </div>
       </div>
       <div className={styles.divider} />
