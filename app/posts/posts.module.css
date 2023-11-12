@@ -8,14 +8,12 @@
   display: block;
   background: var(--on-background-color);
   border-radius: 10px;
-  opacity: 1;
-  transition: all 1s;
 }
 
 .container:hover {
   cursor: pointer;
   background: var(--layout-background-color);
-  transition: background-color 0.2s;
+  transition: background-color 0.3s;
 }
 
 .container * {
@@ -27,6 +25,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: flex-start;
   padding: 20px;
 }
 
@@ -39,12 +38,13 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 0.2rem;
 }
 
 .actions {
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 1rem;
 }
 
 .actions > *:hover {
@@ -56,5 +56,5 @@
   font-size: 0.8rem;
   display: flex;
   flex-direction: row;
-  gap: 10px;
+  gap: 0.5rem;
 }

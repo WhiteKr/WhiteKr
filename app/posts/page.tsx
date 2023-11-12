@@ -1,4 +1,4 @@
-import { Db } from 'mongodb';
+import { Db, Filter } from 'mongodb';
 import { connectDB } from '@/util/database';
 import { PostType } from '@/types/PostType';
 import { PostItem } from '@/app/posts/PostItem';
@@ -6,6 +6,7 @@ import { getServerSession, Session } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import styles from './posts.module.css';
 import Link from 'next/link';
+import { UserType } from '@/types/UserType';
 
 export const dynamic = 'force-dynamic';
 
@@ -27,15 +28,29 @@ const PostsPage = async () => {
           </Link>
         }
       </div>
-      {postArray.map((value: PostType, index: number) => {
+      {postArray.reverse().map(async (post: PostType, index: number) => {
           let isMine: boolean = false;
-          if (session) isMine = value.email === session.user?.email;
+          if (session) isMine = post.email === session.user?.email;
 
-          return <PostItem
-            key={index}
-            post={value}
-            isMine={isMine}
-          />;
+          const db: Db = (await connectDB).db('choco-forum');
+          const userFilter: Filter<UserType> = { email: post.email };
+          const author: UserType | null = await db.collection('users').findOne<UserType>(userFilter);
+          if (!author) {
+            return (
+              <div className={styles.container} key={index}>
+                작성자를 확인할 수 없는 포스트입니다.
+              </div>
+            );
+          }
+
+          return (
+            <PostItem
+              key={index}
+              post={post}
+              author={author}
+              isMine={isMine}
+            />
+          );
         },
       )}
     </div>
