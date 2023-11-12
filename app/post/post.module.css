@@ -1,0 +1,42 @@
+/* post page */
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header p {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.info p {
+  font-size: .9rem;
+  font-weight: normal;
+}
+
+.content {
+  margin-top: 30px;
+}
+
+/* post form */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form textarea {
+  resize: none;
+  height: auto;
+}
