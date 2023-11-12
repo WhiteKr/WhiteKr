@@ -21,7 +21,7 @@ const PostPage = async (props: PostProps) => {
   const author: UserType | null = await db.collection<UserType>('users').findOne(userFilter);
 
   return (
-    <div className={`page-container`}>
+    <div className={`page-container ${styles.container}`}>
       <div className={styles.header}>
         <p>{post?.title}</p>
         <div className={styles.info}>
