@@ -27,7 +27,7 @@ const PostsPage = async () => {
           </Link>
         }
       </div>
-      {postArray.map((value: PostType, index: number) => {
+      {postArray.reverse().map((value: PostType, index: number) => {
           let isMine: boolean = false;
           if (session) isMine = value.email === session.user?.email;
 
