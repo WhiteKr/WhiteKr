@@ -26,7 +26,7 @@ const PostPage = async (props: PostProps) => {
     <div className={`page-container ${styles.postContainer}`}>
       <div className={styles.postHeader}>
         <p>{post?.title}</p>
-        <div className={styles.authorContainer}>
+        <div className={styles.infoContainer}>
           <p>{author?.name}</p>
           <ProfileAvatar src={author?.image} size={40} />
         </div>

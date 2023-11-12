@@ -18,20 +18,19 @@
   font-weight: bold;
 }
 
-.authorContainer {
+.infoContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
 }
 
-.authorContainer p {
+.infoContainer p {
   font-size: .9rem;
   font-weight: normal;
 }
 
 .postContent {
-  white-space: pre;
 }
 
 /* post form */

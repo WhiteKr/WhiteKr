@@ -64,9 +64,10 @@ export const PostItem = (props: PostItemProps) => {
       >
         <div className={styles.postContent}>
           <h4>{post.title}</h4>
-          <div className={styles.authorContainer}>
+          <div className={styles.infoContainer}>
             <ProfileAvatar src={author.image} size={20} />
             <p>{author.name}</p>
+            <p>코멘트 0개</p>
           </div>
         </div>
         <div className={styles.actions}>
