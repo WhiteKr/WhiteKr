@@ -1,4 +1,4 @@
-export const timeForToday = (date: Date) => {
+export const timeAgo = (date: Date) => {
   if (!date) return '';
 
   const today: Date = new Date();

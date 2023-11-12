@@ -6,6 +6,7 @@ import ProfileAvatar from '@/components/ProfileAvatar';
 import CommentSection from '@/app/post/[id]/CommentSection';
 
 import styles from '../post.module.css';
+import { timeAgo } from '@/util/date';
 
 interface PostProps {
   params: {
@@ -27,6 +28,7 @@ const PostPage = async (props: PostProps) => {
       <div className={styles.postHeader}>
         <p>{post?.title}</p>
         <div className={styles.infoContainer}>
+          <p>{timeAgo(post?.timestamp!)}</p>
           <p>{author?.name}</p>
           <ProfileAvatar src={author?.image} size={40} />
         </div>
