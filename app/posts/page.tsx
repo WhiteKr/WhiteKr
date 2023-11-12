@@ -18,12 +18,18 @@ const PostsPage = async () => {
 
   return (
     <div className={`page-container ${styles.list}`}>
-      <div className={styles.container}>
+      <div className={styles.postContainer}>
         {session ?
-          <Link href={'/post/new'} className={styles.post}>
+          <Link
+            className={styles.post}
+            href={'/post/new'}
+          >
             게시글 작성하기
           </Link> :
-          <Link href={`/api/auth/signin?callbackUrl=${process.env.NEXTAUTH_URL}/post/new`} className={styles.post}>
+          <Link
+            className={styles.post}
+            href={`/api/auth/signin?callbackUrl=${process.env.NEXTAUTH_URL}/post/new`}
+          >
             <p>로그인하고 새 포스트를 작성하세요.</p>
           </Link>
         }

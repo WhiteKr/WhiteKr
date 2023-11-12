@@ -1,9 +1,11 @@
 import { Db, Filter, ObjectId } from 'mongodb';
 import { connectDB } from '@/util/database';
 import { PostType } from '@/types/PostType';
-import styles from '../post.module.css';
 import { UserType } from '@/types/UserType';
 import ProfileAvatar from '@/components/ProfileAvatar';
+import CommentSection from '@/app/post/[id]/CommentSection';
+
+import styles from '../post.module.css';
 
 interface PostProps {
   params: {
@@ -21,18 +23,18 @@ const PostPage = async (props: PostProps) => {
   const author: UserType | null = await db.collection<UserType>('users').findOne(userFilter);
 
   return (
-    <div className={`page-container ${styles.container}`}>
-      <div className={styles.header}>
+    <div className={`page-container ${styles.postContainer}`}>
+      <div className={styles.postHeader}>
         <p>{post?.title}</p>
-        <div className={styles.info}>
+        <div className={styles.authorContainer}>
           <p>{author?.name}</p>
           <ProfileAvatar src={author?.image} size={40} />
         </div>
       </div>
-      <div className={styles.divider} />
-      <div className={styles.content}>
+      <div className={styles.postContent}>
         <p>{post?.content}</p>
       </div>
+      <CommentSection parentId={post!._id.toString()} />
     </div>
   );
 };

@@ -1,0 +1,45 @@
+.commentList {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.comment {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.comment:hover {
+  background: var(--layout-background-color)
+}
+
+.commentBox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  align-content: center;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.actions > *:hover {
+  cursor: pointer;
+  color: var(--link-hover-color);
+}
+
+.commentForm {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.commentForm input {
+  flex: 1
+}

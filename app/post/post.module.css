@@ -1,48 +1,48 @@
 /* post page */
 
-.container {
+.postContainer {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
 
-.header {
+.postHeader {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.header p {
+.postHeader p {
   font-size: 1.3rem;
   font-weight: bold;
 }
 
-.info {
+.authorContainer {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 10px;
 }
 
-.info p {
+.authorContainer p {
   font-size: .9rem;
   font-weight: normal;
 }
 
-.content {
+.postContent {
   white-space: pre;
 }
 
 /* post form */
 
-.form {
+.postForm {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.form textarea {
+.postForm textarea {
   resize: none;
   height: auto;
 }

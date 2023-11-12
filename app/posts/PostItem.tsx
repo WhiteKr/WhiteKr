@@ -55,24 +55,25 @@ export const PostItem = (props: PostItemProps) => {
     }
   };
 
-  return <div className={styles.container}>
-    <Link
-      className={styles.post}
-      href={`/post/${post._id}`}
-      prefetch={false}
-    >
-      <div className={styles.content}>
-        <h4>{post.title}</h4>
-        <div className={styles.info}>
-          <ProfileAvatar src={author.image} size={20} />
-          <p>{author.name}</p>
+  return (
+    <div className={styles.postContainer}>
+      <Link
+        className={styles.post}
+        href={`/post/${post._id}`}
+        prefetch={false}
+      >
+        <div className={styles.postContent}>
+          <h4>{post.title}</h4>
+          <div className={styles.authorContainer}>
+            <ProfileAvatar src={author.image} size={20} />
+            <p>{author.name}</p>
+          </div>
         </div>
-      </div>
-
-      <div className={styles.actions}>
-        {isMine && <span onClick={onClickEdit}>수정</span>}
-        {isMine && <span onClick={onClickDelete}>삭제</span>}
-      </div>
-    </Link>
-  </div>;
+        <div className={styles.actions}>
+          {isMine && <span onClick={onClickEdit}>수정</span>}
+          {isMine && <span onClick={onClickDelete}>삭제</span>}
+        </div>
+      </Link>
+    </div>
+  );
 };
