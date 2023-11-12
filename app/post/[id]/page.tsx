@@ -3,6 +3,7 @@ import { connectDB } from '@/util/database';
 import { PostType } from '@/types/PostType';
 import styles from '../post.module.css';
 import { UserType } from '@/types/UserType';
+import ProfileAvatar from '@/components/ProfileAvatar';
 
 interface PostProps {
   params: {
@@ -17,7 +18,7 @@ const PostPage = async (props: PostProps) => {
   const post: PostType | null = await db.collection<PostType>('post').findOne(postFilter);
 
   const userFilter: Filter<UserType> = { email: post?.email };
-  const author: UserType | null = await db.collection<UserType>('a').findOne(userFilter);
+  const author: UserType | null = await db.collection<UserType>('users').findOne(userFilter);
 
   return (
     <div className={`page-container`}>
@@ -25,9 +26,10 @@ const PostPage = async (props: PostProps) => {
         <p>{post?.title}</p>
         <div className={styles.info}>
           <p>{author?.name}</p>
-          <p>{author?.email}</p>
+          <ProfileAvatar src={author?.image} size={50} />
         </div>
       </div>
+      <div className={styles.divider} />
       <div className={styles.content}>
         <p>{post?.content}</p>
       </div>

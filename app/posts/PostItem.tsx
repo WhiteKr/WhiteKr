@@ -16,6 +16,11 @@ export const PostItem = (props: PostItemProps) => {
     isMine = false,
   }: PostItemProps = props;
 
+  const onClickEdit = (event: React.MouseEvent) => {
+    event.preventDefault();
+    window.location.assign(`/post/edit/${post._id}`);
+  };
+
   const onClickDelete = async (event: React.MouseEvent<HTMLSpanElement>) => {
     try {
       const item: HTMLSpanElement = (event.target as HTMLSpanElement).parentElement!;
@@ -46,12 +51,11 @@ export const PostItem = (props: PostItemProps) => {
         <h4>{post.title}</h4>
         <div className={styles.info}>
           <p>{post.email}</p>
-          <p>방금 전</p>
         </div>
       </div>
 
       <div className={styles.actions}>
-        {isMine && <Link href={`/post/edit/${post._id}`}>수정</Link>}
+        {isMine && <span onClick={onClickEdit}>수정</span>}
         {isMine && <span onClick={onClickDelete}>삭제</span>}
       </div>
     </Link>

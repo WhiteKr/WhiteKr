@@ -1,13 +1,27 @@
 /* post page */
 
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .header p {
   font-size: 1.3rem;
   font-weight: bold;
 }
 
+.info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
 .info p {
   font-size: .9rem;
-  font-weight: lighter;
+  font-weight: normal;
 }
 
 .content {

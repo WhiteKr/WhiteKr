@@ -6,7 +6,7 @@ import { getServerSession, Session } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import styles from './posts.module.css';
 
-export const dynamic = 'force-dynamic';
+export const dynamic: string = 'force-dynamic';
 
 const PostsPage = async () => {
   let db: Db = (await connectDB).db('choco-forum');
