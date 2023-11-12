@@ -1,11 +1,13 @@
 import { ObjectId } from 'mongodb';
-import { User } from 'next-auth';
 
-interface UserType extends User {
-  _id: ObjectId,
-  name: string,
-  email: string,
-  password: string,
+interface UserType {
+  _id: ObjectId;
+  password: string;
+
+  name: string;
+  email: string;
+  image: string;
+  emailVerified: boolean;
 }
 
 export type { UserType };
