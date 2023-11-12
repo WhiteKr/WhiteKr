@@ -1,0 +1,30 @@
+.navbar {
+  background: var(--layout-background-color);
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tabs a {
+  margin-right: 3rem;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.tabs a:hover {
+  cursor: pointer;
+  color: var(--link-hover-color);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}

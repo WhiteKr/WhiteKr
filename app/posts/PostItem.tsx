@@ -3,15 +3,16 @@
 import Link from 'next/link';
 import { PostType } from '@/types/PostType';
 import React from 'react';
+import styles from './post.module.css';
 
 interface PostItemProps {
-  value: PostType;
+  post: PostType;
   isMine: boolean;
 }
 
 export const PostItem = (props: PostItemProps) => {
   const {
-    value,
+    post,
     isMine = false,
   }: PostItemProps = props;
 
@@ -20,7 +21,7 @@ export const PostItem = (props: PostItemProps) => {
       const item: HTMLSpanElement = (event.target as HTMLSpanElement).parentElement!;
 
       const result: Response = await fetch(
-        `/api/post/delete/${value._id.toString()}`,
+        `/api/post/delete/${post._id.toString()}`,
         { method: 'DELETE' },
       );
       if (!result.ok) return;
@@ -35,17 +36,24 @@ export const PostItem = (props: PostItemProps) => {
     }
   };
 
-  return <div className='list-item'>
+  return <div className={styles.container}>
     <Link
+      className={styles.post}
+      href={`/post/${post._id}`}
       prefetch={false}
-      href={`/post/${value._id}`}
     >
-      <h4>{value.title}</h4>
+      <div className={styles.content}>
+        <h4>{post.title}</h4>
+        <div className={styles.info}>
+          <p>{post.email}</p>
+          <p>방금 전</p>
+        </div>
+      </div>
+
+      <div className={styles.actions}>
+        {isMine && <Link href={`/post/edit/${post._id}`}>수정</Link>}
+        {isMine && <span onClick={onClickDelete}>삭제</span>}
+      </div>
     </Link>
-
-    {isMine && <Link href={`/post/edit/${value._id}`}>✏️</Link>}
-    {isMine && <span onClick={onClickDelete}>🗑️</span>}
-
-    <p>{value.content}</p>
   </div>;
 };

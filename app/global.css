@@ -1,58 +1,52 @@
-.navbar {
-  background: white;
-  padding: 20px;
+:root {
+  --text-color: #000;
+  --background-color: #FFF;
+  --layout-background-color: #EEE;
+  --on-background-color: #DDD;
+  --link-hover-color: cornflowerblue;
 }
 
-.navbar a {
-  margin-right: 20px;
-  text-decoration: none;
-  color: black;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #FFF;
+    --background-color: #1F1F1F;
+    --layout-background-color: #252525;
+    --on-background-color: #454545;
+  }
 }
 
-.logo {
-  font-weight: bold;
-}
-
-.list-bg {
-  background: rgb(249, 250, 255);
-  padding: 10px;
-}
-
-.list-item {
-  background: white;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 5px;
-  box-shadow: rgb(224, 224, 224) 0 2px 4px 0;
-  opacity: 1;
-  transition: all 1s;
-}
-
-.list-item h4 {
-  font-size: 20px;
-  font-weight: 800;
+*,
+*::before,
+*::after {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.list-item p {
-  color: grey;
-  margin: 5px 0;
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  background: var(--background-color);
+  color: var(--text-color);
 }
 
-.p-20 {
+body > div {
   padding: 20px;
 }
 
 input {
-  box-sizing: border-box;
-  padding: 10px;
+  padding: 10px 15px;
   display: block;
-  margin-bottom: 10px;
+  border-radius: 5px;
+  background: var(--on-background-color);
+  color: var(--text-color);
 }
 
 button {
   padding: 10px 15px;
-  background: lightgray;
   border: none;
   border-radius: 5px;
+  background: var(--on-background-color);
+  color: var(--text-color);
+  cursor: pointer;
 }
