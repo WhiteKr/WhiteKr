@@ -22,8 +22,15 @@ export const PostItem = (props: PostItemProps) => {
   };
 
   const onClickDelete = async (event: React.MouseEvent<HTMLSpanElement>) => {
+    event.preventDefault();
+
+    if (!confirm('포스트를 정말 삭제할까요?\n삭제하면 되돌릴 수 없습니다.')) return;
+
     try {
-      const item: HTMLSpanElement = (event.target as HTMLSpanElement).parentElement!;
+      const postContainer: HTMLSpanElement = (event.target as HTMLSpanElement)
+        .parentElement!
+        .parentElement!
+        .parentElement!;
 
       const result: Response = await fetch(
         `/api/post/delete/${post._id.toString()}`,
@@ -31,9 +38,12 @@ export const PostItem = (props: PostItemProps) => {
       );
       if (!result.ok) return;
 
-      item.style.opacity = '0';
+      postContainer.style.transition = 'all 1s ease-in-out';
+      postContainer.style.transform = 'scale(0.9)';
+      postContainer.style.transformOrigin = 'center';
+      postContainer.style.opacity = '0';
       setTimeout(() => {
-        item.style.display = 'none';
+        postContainer.style.display = 'none';
       }, 1000);
 
     } catch (error) {

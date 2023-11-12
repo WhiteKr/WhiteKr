@@ -8,14 +8,12 @@
   display: block;
   background: var(--on-background-color);
   border-radius: 10px;
-  opacity: 1;
-  transition: all 1s;
 }
 
 .container:hover {
   cursor: pointer;
   background: var(--layout-background-color);
-  transition: background-color 0.2s;
+  transition: background-color 0.3s;
 }
 
 .container * {
