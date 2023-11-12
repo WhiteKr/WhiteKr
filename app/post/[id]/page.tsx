@@ -1,6 +1,8 @@
 import { Db, Filter, ObjectId } from 'mongodb';
 import { connectDB } from '@/util/database';
 import { PostType } from '@/types/PostType';
+import styles from '../post.module.css';
+import { UserType } from '@/types/UserType';
 
 interface PostProps {
   params: {
@@ -10,14 +12,25 @@ interface PostProps {
 
 const PostPage = async (props: PostProps) => {
   const db: Db = (await connectDB).db('choco-forum');
-  const filter: Filter<PostType> = { _id: new ObjectId(props.params.id) };
-  const post: PostType | null = await db.collection<PostType>('post').findOne(filter);
+
+  const postFilter: Filter<PostType> = { _id: new ObjectId(props.params.id) };
+  const post: PostType | null = await db.collection<PostType>('post').findOne(postFilter);
+
+  const userFilter: Filter<UserType> = { email: post?.email };
+  const author: UserType | null = await db.collection<UserType>('a').findOne(userFilter);
 
   return (
-    <div>
-      <h4>상세페이지</h4>
-      <h4>{post?.title}</h4>
-      <p>{post?.content}</p>
+    <div className={`page-container`}>
+      <div className={styles.header}>
+        <p>{post?.title}</p>
+        <div className={styles.info}>
+          <p>{author?.name}</p>
+          <p>{author?.email}</p>
+        </div>
+      </div>
+      <div className={styles.content}>
+        <p>{post?.content}</p>
+      </div>
     </div>
   );
 };

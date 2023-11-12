@@ -1,5 +1,5 @@
 const Register = () => (
-  <div>
+  <div className='page-container'>
     <form method='POST' action='/api/auth/signup'>
       <input name='name' type='text' placeholder='이름' />
       <input name='email' type='text' placeholder='이메일' />
@@ -8,4 +8,5 @@ const Register = () => (
     </form>
   </div>
 );
+
 export default Register;

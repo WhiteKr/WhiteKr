@@ -1,0 +1,28 @@
+/* post page */
+
+.header p {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.info p {
+  font-size: .9rem;
+  font-weight: lighter;
+}
+
+.content {
+  margin-top: 30px;
+}
+
+/* post form */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form textarea {
+  resize: none;
+  height: auto;
+}

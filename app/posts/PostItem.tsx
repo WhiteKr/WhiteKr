@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { PostType } from '@/types/PostType';
 import React from 'react';
-import styles from './post.module.css';
+import styles from './posts.module.css';
 
 interface PostItemProps {
   post: PostType;

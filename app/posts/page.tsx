@@ -4,7 +4,7 @@ import { PostType } from '@/types/PostType';
 import { PostItem } from '@/app/posts/PostItem';
 import { getServerSession, Session } from 'next-auth';
 import { authOptions } from '@/app/api/auth/[...nextauth]/route';
-import styles from './post.module.css';
+import styles from './posts.module.css';
 
 export const dynamic = 'force-dynamic';
 
@@ -15,7 +15,7 @@ const PostsPage = async () => {
   const session: Session | null = await getServerSession(authOptions);
 
   return (
-    <div className={styles.postList}>
+    <div className={`page-container ${styles.list}`}>
       {postArray.map((value: PostType, index: number) => {
           let isMine: boolean = false;
           if (session) isMine = value.email === session.user?.email;
