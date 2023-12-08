@@ -1,12 +1,11 @@
-import { Db, Filter, ObjectId } from 'mongodb';
-import { connectDB } from '@/util/database';
+import CommentSection from '@/app/post/[id]/CommentSection';
+import ProfileAvatar from '@/components/ProfileAvatar';
 import { PostType } from '@/types/PostType';
 import { UserType } from '@/types/UserType';
-import ProfileAvatar from '@/components/ProfileAvatar';
-import CommentSection from '@/app/post/[id]/CommentSection';
-
+import { connectDB } from '@/util/database';
+import { Db, Filter, ObjectId } from 'mongodb';
 import styles from '../post.module.css';
-import { timeAgo } from '@/util/date';
+import { TimeAgo } from './TimeAgo';
 
 interface PostProps {
   params: {
@@ -36,10 +35,14 @@ const PostPage = async (props: PostProps) => {
         <p>{post?.content}</p>
       </div>
       <div className={`${styles.timestamps} ${styles.infoContainer}`}>
-        <p>{timeAgo(post?.timestamp!)} 작성</p>
-        {post?.updatedAt &&
-          <p>{timeAgo(post?.updatedAt)} 수정</p>
-        }
+        <TimeAgo
+          suffix='작성'
+          timestamp={post?.timestamp}
+        />
+        <TimeAgo
+          suffix='수정'
+          timestamp={post?.updatedAt}
+        />
       </div>
       <CommentSection parentId={post!._id.toString()} />
     </div>
