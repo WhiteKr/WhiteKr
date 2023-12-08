@@ -25,6 +25,3 @@
 <a href="mailto:hanjisu2215g@gmail.com">
   ![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)
 </a>
-
-[![Awesome Kotlin Badge](https://kotlin.link/awesome-kotlin.svg)](https://github.com/KotlinBy/awesome-kotlin)
-[![Profile Views](https://komarev.com/ghpvc/?username=WhiteKr&color=FAC151)](https://github.com/WhiteKr)
