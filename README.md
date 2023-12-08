@@ -1,8 +1,8 @@
 # Hello, there! 👋 [![Views](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FWhiteKr%2F&count_bg=%2379C83D&title_bg=%23555555&icon=github.svg&icon_color=%23E7E7E7&title=Views&edge_flat=false)](https://github.com/WhiteKr)
 
-- A Frontend developer
+- A Front-end developer
 - VERY OPENED for learning and using new skills
-- Traveling to be a developer creating infinite possibilities
+- Traveling to be a Full-stack developer creating infinite possibilities
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=WhiteKr&layout=compact)](https://github.com/WhiteKr)
 [![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=WhiteKr)](https://solved.ac/WhiteKr)
